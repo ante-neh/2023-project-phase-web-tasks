@@ -1,4 +1,4 @@
-# Counter App Readme
+# Counter App 
 
 ## Description
 The Counter App is a simple React application that displays a counter with an increment button. Each time the button is clicked, the counter value increases by 1. Additionally, the document title is dynamically updated to reflect the current count.
@@ -28,9 +28,6 @@ Once the Counter App is running in your browser, you will see the current count 
 
 ## Contributing
 If you find any issues or have suggestions for improvements, feel free to submit a pull request. Contributions are welcome!
-
-## License
-This project is licensed under the [MIT License](LICENSE).
 
 
 
