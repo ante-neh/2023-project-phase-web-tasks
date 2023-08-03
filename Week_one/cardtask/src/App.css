@@ -1,0 +1,8 @@
+.App {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  /* background-image:url("./components/sincerely-media-gPnHi8AmO5k-unsplash.jpg"); */
+  background-color:orange;
+}

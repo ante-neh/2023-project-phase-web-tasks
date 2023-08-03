@@ -1,0 +1,57 @@
+.cardContainer{
+    display:flex;
+    flex-direction:column;
+    font-size:25px;
+    color:black;
+    background:rgba(255, 255, 255, 0.1);
+    box-shadow:0 25px 45px rgb(0, 0, 0, 0.2);
+    backdrop-filter:blur(50px);
+    -webkit-backdrop-filter:blur(40px);
+    border:1px solid rgb(255,255,255,0.5);
+    border-radius:15px;
+    width:300px;
+    height:350px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    border-bottom:1px solid gainsboro;
+    height:70px;
+}
+
+
+.image{
+    padding-left:10px;
+    border-radius:50px;
+    height: 60px;
+}
+
+.name{
+    padding-right:30px;
+    color:rgb(224, 59, 29);
+}
+
+.body{
+    height:90%;
+    position: relative;
+}
+
+
+.linkes{
+    position:absolute;
+    display:flex;
+    justify-content: space-between;
+}
+
+.website{
+    padding-right:10px;
+
+}
+
+.linkes .anchor{
+    padding-left:10px;
+    text-decoration:none;
+    color:white;
+}
