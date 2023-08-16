@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteNote } from './features/notes/noteSlice';
 import AddNote from './AddNote';
-import UpdateNote from './updateNote';
+import { Link } from 'react-router-dom';
 
 
 const NotesList = () => {
@@ -33,6 +33,12 @@ const NotesList = () => {
               >
                 Delete
               </button>
+              <Link
+                to={`/update/${note.id}`}
+                className="px-3 ml-5 py-1 bg-blue-500 text-white rounded mr-2"
+              >
+                Update
+              </Link>
             </div>
           </div>
         ))
