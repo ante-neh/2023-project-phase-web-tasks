@@ -21,9 +21,10 @@ const AddNote = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Add a New Note</h2>
+      <h2 data-testid="addnote" className="text-2xl font-bold mb-4">Add a New Note</h2>
       <div className="bg-gray-100 p-4 rounded-lg shadow">
         <input
+          data-testid="title"
           type="text"
           placeholder="Title"
           value={title}
@@ -31,6 +32,7 @@ const AddNote = () => {
           className="w-full p-2 mb-2 rounded border border-gray-300"
         />
         <textarea
+          data-testid="content"
           placeholder="Content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
