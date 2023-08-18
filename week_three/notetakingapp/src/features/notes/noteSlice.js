@@ -7,6 +7,7 @@ const noteSlice = createSlice({
     addNote: (state, action) => {
       state.push(action.payload);
     },
+    
     updateNote: (state, action) => {
       const { id, title, content } = action.payload;
       const existingNote = state.find(note => note.id === id);

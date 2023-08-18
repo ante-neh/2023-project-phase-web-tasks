@@ -6,17 +6,17 @@ import UpdateNote from './updateNote';
 
 
 const App = () => {
-
+  <nav>
+    <Link to = "/">update</Link>
+    <Link to = "/add">update</Link>
+    <Link to = "/update/:id">update</Link>
+  </nav>
   return (
     <Router>
-          <Link to="/"> Home </Link>
-          <Link to="/add"> Add </Link>
-          <Link to="/update:id"> Update </Link>
-
       <Routes>
         <Route exact path='/' element={<NotesList/>}/>
-        <Route exact Path='/add' element={<AddNote/>}/>
-        <Route exact path='/update' element={<UpdateNote/>}/>
+        <Route exact Path="/add" element={<AddNote/>}/>
+        <Route exact path="/update/:id" element={<UpdateNote />} />
       </Routes>
     </Router>
   );

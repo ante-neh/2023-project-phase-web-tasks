@@ -1,23 +1,27 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteNote } from './features/notes/noteSlice';
+import { deleteNote,} from './features/notes/noteSlice';
 import AddNote from './AddNote';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const NotesList = () => {
   const notes = useSelector(state => state.notes);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const handleDeleteNote = (id) => {
     dispatch(deleteNote(id));
   };
 
+  const handleUpdateNote=(id)=>{
+    navigate(`/update/${id}`)
+  }
+
 
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Notes List</h2>
-      {/* <button onClick={()=>navigate.push('/add')}>Add Note</button> */}
       <AddNote/>
       {notes.length === 0 ? (
         <p>No notes found.</p>
@@ -33,12 +37,13 @@ const NotesList = () => {
               >
                 Delete
               </button>
-              <Link
-                to={`/update/${note.id}`}
-                className="px-3 ml-5 py-1 bg-blue-500 text-white rounded mr-2"
+        
+              <button 
+              onClick = {()=>handleUpdateNote(note.id)}
+              className="px-3 ml-5 py-1 bg-blue-500 text-white rounded mr-2"
               >
-                Update
-              </Link>
+                  Update
+              </button>
             </div>
           </div>
         ))

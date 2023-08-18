@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { updateNote } from './features/notes/noteSlice';
 
 const UpdateNote = () => {
+  const navigate = useNavigate()
   const { id } = useParams();
   const dispatch = useDispatch();
   const notes = useSelector(state => state.notes);
   const note = notes.find(note => note.id === id);
 
+ 
+
   const [title, setTitle] = useState(note.title);
   const [content, setContent] = useState(note.content);
 
-  const handleUpdateNote = () => {
+
+
+  const handleUpdateNote = (id) => {
     if (title && content) {
       dispatch(updateNote({ id, title, content }));
-      
+      navigate('/')
     }
+
   };
 
   return (
@@ -36,7 +42,7 @@ const UpdateNote = () => {
           className="w-full p-2 mb-2 rounded border border-gray-300"
         />
         <button
-          onClick={handleUpdateNote}
+          onClick={()=>handleUpdateNote(id)}
           className="px-4 py-2 bg-blue-500 text-white rounded"
         >
           Update Note
