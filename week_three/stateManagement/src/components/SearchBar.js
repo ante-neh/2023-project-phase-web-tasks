@@ -12,7 +12,7 @@ function SearchBar() {
     event.preventDefault();
     const queryParams = new URLSearchParams(location.search);
     queryParams.set('q', searchTerm);
-    navigate(`/search?${queryParams.toString()}`);;
+    navigate(`/?${queryParams.toString()}`);
   };
 
   return (
